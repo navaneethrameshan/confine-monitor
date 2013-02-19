@@ -1,6 +1,7 @@
 
 from client.nodeinfo.sysinfo import systeminfo
 from client.nodeinfo.systeminfo import nodeinfo
+from client.nodeinfo.datagenerator import datagenerator
 from filelock import FileLock
 import config
 import string
@@ -21,6 +22,9 @@ def monitorStore():
 
     # Attach sliver info to system info
  #TODO: Uncomment later   system_info.update(sliverinfo.collectAllData())
+
+# TODO: Remove this later---for now attach fake data
+    system_info.update(datagenerator.collectAllData_fake())
 
 
     config.update_current_seq_number()
