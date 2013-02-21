@@ -1,6 +1,7 @@
 from client.main import config
 
 import shelve
+import os
 
 def get_all_info_since(seqnumber):
     """
@@ -8,7 +9,11 @@ def get_all_info_since(seqnumber):
     Attach the current client timestamp, and time since the information was monitored (relative_timestamp)
     """
     system_info= {}
-    s= shelve.open('/home/navaneeth/PycharmProjects/confine_monitor/client/main/log_shelf.db')
+    path = os.path.join(os.path.dirname(__file__), 'log_shelf.db')
+    print path
+
+    s= shelve.open(str(path))	
+    #s= shelve.open('/home/navaneeth/PycharmProjects/confine_monitor/client/main/log_shelf.db')
     try:
         # TODO: check for possible race condition in get_current_seq_number and delete seen seq numbers
         # Once deleting seq numbers in logs are implemented, then check for sequence number limits.
@@ -32,3 +37,6 @@ def get_shelve_elements():
     s= shelve.open('/home/navaneeth/PycharmProjects/confine_monitor/client/main/log_shelf.db')
     print s.keys()
     s.close()
+
+if __name__ == '__main__':
+    get_all_info_since(1000) 

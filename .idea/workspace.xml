@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1135455-2498-4bb6-bee2-7bc6983782be" name="Default" comment="Timestamps and sequence numbers added">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/couchbase_test/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/couchbase_test/beersample.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/couchbase_test/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/couchdb_test/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/couchdb_test/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/main/log_shelf.db" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="confine_monitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/main/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="10" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
+            <state line="19" column="10" selection-start="355" selection-end="355" vertical-scroll-proportion="0.53977275">
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -48,30 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cpu.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/cpu.py">
+      <file leaf-file-name="datagenerator.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/nodeinfo/datagenerator/datagenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="76" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manage.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="network.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/network.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="18" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
+            <state line="28" column="31" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -82,7 +59,7 @@
       <file leaf-file-name="memory.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/memory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="10" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
+            <state line="16" column="44" selection-start="354" selection-end="394" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -90,12 +67,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="disk.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/disk.py">
+      <file leaf-file-name="log.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/main/log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/main/store.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="28" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/web/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="87" column="65" selection-start="3307" selection-end="3340" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sliverinfo.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/nodeinfo/sysinfo/sliverinfo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="48" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cpu.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/cpu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="66" selection-start="217" selection-end="280" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#22#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/process/store.py" />
         <option value="$PROJECT_DIR$/server/process/views.py" />
         <option value="$PROJECT_DIR$/TestScript.py" />
         <option value="$PROJECT_DIR$/client/web/urls.py" />
@@ -127,9 +158,10 @@
         <option value="$PROJECT_DIR$/client/nodeinfo/systeminfo/cpu.py" />
         <option value="$PROJECT_DIR$/client/nodeinfo/systeminfo/network.py" />
         <option value="$PROJECT_DIR$/client/nodeinfo/systeminfo/nodeinfo.py" />
-        <option value="$PROJECT_DIR$/client/main/store.py" />
         <option value="$PROJECT_DIR$/client/nodeinfo/systeminfo/disk.py" />
         <option value="$PROJECT_DIR$/client/main/main.py" />
+        <option value="$PROJECT_DIR$/client/main/store.py" />
+        <option value="$PROJECT_DIR$/client/nodeinfo/datagenerator/datagenerator.py" />
       </list>
     </option>
   </component>
@@ -239,6 +271,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="confine_monitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="confine_monitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="nodeinfo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -262,6 +312,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="systeminfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="confine_monitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="confine_monitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datagenerator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -335,23 +407,6 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="netstat" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/client/nodeinfo/psutil-0.6.1/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="confine_monitor" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client/nodeinfo/psutil-0.6.1/examples/netstat.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="network" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -398,6 +453,23 @@
       <module name="confine_monitor" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client/nodeinfo/systeminfo/nodeinfo.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="datagenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/client/nodeinfo/datagenerator" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="confine_monitor" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client/nodeinfo/datagenerator/datagenerator.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -567,18 +639,18 @@
       <item index="2" class="java.lang.String" itemvalue="Django server.confine_monitor" />
       <item index="3" class="java.lang.String" itemvalue="Python's test.Nosetests in /home/navaneeth/PycharmProjects/confine_monitor" />
       <item index="4" class="java.lang.String" itemvalue="Python.disk" />
-      <item index="5" class="java.lang.String" itemvalue="Python.netstat" />
-      <item index="6" class="java.lang.String" itemvalue="Python.network" />
-      <item index="7" class="java.lang.String" itemvalue="Python.memory" />
-      <item index="8" class="java.lang.String" itemvalue="Python.nodeinfo" />
+      <item index="5" class="java.lang.String" itemvalue="Python.network" />
+      <item index="6" class="java.lang.String" itemvalue="Python.memory" />
+      <item index="7" class="java.lang.String" itemvalue="Python.nodeinfo" />
+      <item index="8" class="java.lang.String" itemvalue="Python.datagenerator" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.disk" />
-        <item index="1" class="java.lang.String" itemvalue="Python.nodeinfo" />
-        <item index="2" class="java.lang.String" itemvalue="Python.network" />
-        <item index="3" class="java.lang.String" itemvalue="Python.memory" />
-        <item index="4" class="java.lang.String" itemvalue="Python.netstat" />
+        <item index="0" class="java.lang.String" itemvalue="Python.datagenerator" />
+        <item index="1" class="java.lang.String" itemvalue="Python.disk" />
+        <item index="2" class="java.lang.String" itemvalue="Python.nodeinfo" />
+        <item index="3" class="java.lang.String" itemvalue="Python.network" />
+        <item index="4" class="java.lang.String" itemvalue="Python.memory" />
       </list>
     </recent_temporary>
   </component>
@@ -631,7 +703,11 @@
       <created>1360702682130</created>
       <updated>1360702682130</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fake data generator for sliver metrics to test">
+      <created>1361309320261</created>
+      <updated>1361309320261</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -713,7 +789,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Timestamps and sequence numbers added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fake data generator for sliver metrics to test" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -732,6 +808,7 @@
     <MESSAGE value="Sliver monitoring" />
     <MESSAGE value="Graphs using flot test" />
     <MESSAGE value="Timestamps and sequence numbers added" />
+    <MESSAGE value="Fake data generator for sliver metrics to test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,15 +816,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/main/log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/nodeinfo/sysinfo/pypcimap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.5922331">
@@ -778,29 +846,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/nodeinfo/sysinfo/sliverinfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/disk.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="33" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/memory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="10" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -823,28 +873,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main/main.py">
+    <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="10" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="65" selection-start="3307" selection-end="3340" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main/log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/cpu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="76" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+        <state line="9" column="66" selection-start="217" selection-end="280" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
+    <entry file="file://$PROJECT_DIR$/client/nodeinfo/sysinfo/sliverinfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="40" column="48" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/nodeinfo/systeminfo/memory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="44" selection-start="354" selection-end="394" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main/store.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="28" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/nodeinfo/datagenerator/datagenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="31" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="355" selection-end="355" vertical-scroll-proportion="0.53977275">
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
