@@ -10,11 +10,3 @@ def start_monitoring():
 
 def main():
     start_monitoring()
-
-def lol():
-    log.get_all_info_since(2)
-   # log.get_shelve_elements()
-
-if __name__ == "__main__":
-   # lol()
-    main()

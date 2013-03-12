@@ -9,7 +9,7 @@ def get_all_info_since(seqnumber):
     Attach the current client timestamp, and time since the information was monitored (relative_timestamp)
     """
     system_info= {}
-    path = os.path.join(os.path.dirname(__file__), 'log_shelf.db')
+    path = os.path.join(os.path.dirname(__file__), '../../log_shelf.db')
     print path
 
     s= shelve.open(str(path))	
