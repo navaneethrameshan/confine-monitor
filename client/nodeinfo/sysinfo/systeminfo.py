@@ -506,7 +506,7 @@ if __name__ == "__main__":
     if not uptime:
         print "unable to read /proc/uptime for uptime"
     else:
-        print uptime.items()
+        print str(uptime)
 
     print ""
 
@@ -525,4 +525,4 @@ if __name__ == "__main__":
                 for a_mod in modules[module_class]:
                     module_list = module_list + "%s " % a_mod
                 print "all %s modules: %s" % (module_class, module_list)
-                
+
