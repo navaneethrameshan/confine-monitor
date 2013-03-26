@@ -6,7 +6,7 @@ from filelock import FileLock
 import config
 import string
 import shelve
-from client.nodeinfo.sysinfo import sliverinfo
+
 
 def monitorStore():
     """

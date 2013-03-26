@@ -22,8 +22,12 @@ def collectMemory(container):
         elif data[0] == "total_swap":
             mem_swap = data[1]
 
+    with open('/cgroup/lxc/%s/memory.usage_in_bytes' % (container,), 'r') as f:
 
-    return {'memory':{'total_rss': mem_rss, 'total_cache': mem_cache, 'total_swap': mem_swap}}
+        for line in f.readline():
+            mem_usage = line
+
+    return {'memory':{'total_rss': mem_rss, 'total_cache': mem_cache, 'total_swap': mem_swap, 'mem_usage': mem_usage}}
 
 
 def collectCpu(container):
