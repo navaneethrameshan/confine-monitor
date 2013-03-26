@@ -1,6 +1,6 @@
 
 from client.nodeinfo.sysinfo import systeminfo
-from client.nodeinfo.systeminfo import nodeinfo
+from client.nodeinfo.sysinfo import nodeinfo
 from client.nodeinfo.datagenerator import datagenerator
 from filelock import FileLock
 import config
