@@ -22,6 +22,7 @@ def get_uptime (vars ={}, log = sys.stderr):
 
 
 def load_avg_all():
+    # Gives an error on openwrt
     load_avg = {}
     av1, av2, av3 = os.getloadavg()
     load_avg ['load_avg_1min'] = av1
@@ -31,13 +32,31 @@ def load_avg_all():
     return load_avg
 
 
+PROC_LOADAVG_PATH = "/proc/loadavg"
+def get_load_avg(vars ={}, log = sys.stderr):
+    try:
+        loadavg_file = file(PROC_LOADAVG_PATH, "r")
+    except IOError, e:
+        return
+
+    for line in loadavg_file:
+        try:
+            loadavg_list = string.split(line)
+        except ValueError, e:
+            return
+
+    tasks = string.split(loadavg_list[3], "/")
+    load_avg = {'load_avg_1min': loadavg_list[0],'load_avg_5min': loadavg_list[1], 'load_avg_15min': loadavg_list[2], 'Tasks scheduled to Run': tasks[0], 'Total number of tasks':tasks[1]}
+    loadavg_file.close()
+    return load_avg
+
 def node_all():
     all_info = {}
     disk_info = disk.disk_all()
     network_info = network.network_all()
     memory_info = memory.mem_all()
     uptime = get_uptime()
-    load_avg = load_avg_all()
+    load_avg = get_load_avg()
     cpu_info = cpu.cpu_all()
 
     all_info['disk'] = disk_info
