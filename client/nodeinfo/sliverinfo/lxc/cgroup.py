@@ -11,7 +11,7 @@ class CGroupNoSuchValue(Exception):
 
 class cgroup:
 	"""Get Cgroups"""
-	def __init__(self, name,basepath="/sys/fs/cgroup/lxc"):
+	def __init__(self, name,basepath="/cgroup/lxc"):
 		self.cgroup=basepath+'/'+name
 		if not os.path.isdir(self.cgroup):
 			raise CGroupNotFound

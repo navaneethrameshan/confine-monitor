@@ -28,17 +28,27 @@ def container_mem_usage(name):
     mem_total = memlimit
     mem_used = memused
     mem_free = memlimit-memused
-    mem_percent_used = memused/float(memlimit)*100
+    if (memlimit!=0):
+        mem_percent_used = memused/float(memlimit)*100
+    else:
+        mem_percent_used = None
 
     swap_total = memswlimit-memlimit
     swap_used = memswused-memused
     swap_free = swap_total -swap_used
-    swap_percent_used = swap_used/float(swap_total)*100
+    if(swap_total!=0):
+        swap_percent_used = swap_used/float(swap_total)*100
+    else:
+        swap_percent_used = None
 
     total = memswlimit
     total_used = memswused
     total_free = memswlimit-memswused
-    total_percent_used = memswused/float(memswlimit)*100
+
+    if(memswlimit!=0):
+        total_percent_used = memswused/float(memswlimit)*100
+    else:
+        total_percent_used= None
 
 
 
@@ -60,18 +70,16 @@ def container_cpu_usage(name):
 
 def get_name(container):
     slice_name = ''
-    rd_name = ''
+    sliver_name = ''
 
-    with open('/lxc/images/%s/config' % (container,), 'r') as f:
-        line = f.readline()
-        if line.startswith('lxc.utsname'):
-            line.rstrip('\n')
-            info = line.split('=')
-            sliver_name = info[-1]
-            (slice_name,node_name) = info[-1].split('_')
+    if (os.path.exists('/lxc/images/%s/config' % (container,))):
+        with open('/lxc/images/%s/config' % (container,), 'r') as f:
+            line = f.readline()
+            if line.startswith('lxc.utsname'):
+                line.rstrip('\n')
+                info = line.split('=')
+                sliver_name = info[-1]
+                (slice_name,node_name) = info[-1].split('_')
 
 
     return {'sliver_name': sliver_name, 'slice_name': slice_name}
-
-name = get_name('01')
-print name
