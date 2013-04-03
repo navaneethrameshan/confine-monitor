@@ -1,10 +1,12 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import os
+import time
 from client.nodeinfo.sliverinfo.lxc.cgroup import cgroup
 from client.nodeinfo.sliverinfo import lxc
 import sys
+from client.nodeinfo.sysinfo.common import usage_percent
+
+interval =1
 
 def getRunningContainers():
     lxcdir=os.listdir(lxc.basepath)
@@ -28,27 +30,18 @@ def container_mem_usage(name):
     mem_total = memlimit
     mem_used = memused
     mem_free = memlimit-memused
-    if (memlimit!=0):
-        mem_percent_used = memused/float(memlimit)*100
-    else:
-        mem_percent_used = None
+    mem_percent_used = usage_percent(mem_used, mem_total, _round=1)
 
     swap_total = memswlimit-memlimit
     swap_used = memswused-memused
     swap_free = swap_total -swap_used
-    if(swap_total!=0):
-        swap_percent_used = swap_used/float(swap_total)*100
-    else:
-        swap_percent_used = None
+    swap_percent_used = usage_percent(swap_used, swap_total, _round=1)
 
     total = memswlimit
     total_used = memswused
     total_free = memswlimit-memswused
 
-    if(memswlimit!=0):
-        total_percent_used = memswused/float(memswlimit)*100
-    else:
-        total_percent_used= None
+    total_percent_used = usage_percent(total_used, total, _round=1)
 
 
 
@@ -64,7 +57,11 @@ def container_mem_usage(name):
 
 def container_cpu_usage(name):
     inst = cgroup(name)
-    cpu_usage = inst.getValue("cpuacct.usage")
+    previous_cpu_usage = inst.getValue("cpuacct.usage")
+    time.sleep(interval)
+    current_cpu_usage = inst.getValue("cpuacct.usage")
+    diff_cpu_usage = int(current_cpu_usage) - int(previous_cpu_usage)
+    cpu_usage = float(diff_cpu_usage/(interval*1000000000))
     return {'cpu':{'cpu_usage': cpu_usage}}
 
 
