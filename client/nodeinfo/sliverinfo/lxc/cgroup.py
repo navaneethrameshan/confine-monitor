@@ -15,7 +15,8 @@ class cgroup:
 		self.cgroup=basepath+'/'+name
 		if not os.path.isdir(self.cgroup):
 			raise CGroupNotFound
-		
+
+
 	def getValue(self,name):
 		try:
 			return open(self.cgroup+'/'+name).read().rstrip('\n')

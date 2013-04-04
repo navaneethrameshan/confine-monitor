@@ -9,8 +9,14 @@ from client.nodeinfo.sysinfo.common import usage_percent
 interval =1
 
 def getRunningContainers():
-    lxcdir=os.listdir(lxc.basepath)
-    ret = []
+    ret, lxcdir = [], []
+
+    if(os.path.exists(lxc.basepath)):
+        lxcdir=os.listdir(lxc.basepath)
+
+    else:
+        return ret
+
     for entry in lxcdir:
         if os.path.isdir(os.path.join(lxc.basepath, entry)):
             ret.append(entry)

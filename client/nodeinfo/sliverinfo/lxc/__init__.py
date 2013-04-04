@@ -1,2 +1,2 @@
 
-basepath="/sys/fs/cgroup/lxc"
+basepath="/cgroup/lxc"

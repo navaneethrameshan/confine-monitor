@@ -1,4 +1,5 @@
 from subprocess import check_output
+from client.nodeinfo.sliverinfo import lxc
 from client.nodeinfo.sliverinfo.lxc import utils
 
 def collectData(container):
@@ -15,20 +16,13 @@ def collectData(container):
     return all_info
 
 
-def unique_list(l):
-    ulist = []
-    [ulist.append(x) for x in l if x not in ulist]
-
-    return ulist
-
 def collectAllData():
     container_info = {}
     all_info = {}
 
-    line=check_output(["ls", "/lxc/images"])
-    container_list=' '.join(unique_list(line.split()))
+    container_list = lxc.utils.getRunningContainers()
     print 'Monitoring all started containers: '
-    for container in container_list.split(' '):
+    for container in container_list:
         if not "7d" in container:
             container_info.update(collectData(container))
 
