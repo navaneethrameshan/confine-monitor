@@ -73,7 +73,7 @@ def get_name(container):
         with open('/lxc/images/%s/config' % (container,), 'r') as f:
             line = f.readline()
             if line.startswith('lxc.utsname'):
-                line.rstrip('\n')
+                line=line.replace("\n"," ")
                 info = line.split('=')
                 sliver_name = info[-1]
                 (slice_name,node_name) = info[-1].split('_')
