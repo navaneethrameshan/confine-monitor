@@ -4,8 +4,8 @@ from client.main import config, log
 
 
 @route('/')
-def index(name='World'):
-    return template('<b>Hello {{name}}</b>!', name=name)
+def index():
+    return template('<b>Monitoring client</b>!')
 
 
 @route('/get/all/seqnumber=<seqnumber:int>')
