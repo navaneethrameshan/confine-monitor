@@ -9,18 +9,33 @@ from client.nodeinfo.sysinfo.common import usage_percent
 interval =1
 
 def getRunningContainers():
-    ret, lxcdir = [], []
+    containers, lxcdir = [], []
 
     if(os.path.exists(lxc.basepath)):
         lxcdir=os.listdir(lxc.basepath)
 
     else:
-        return ret
+        return containers
 
     for entry in lxcdir:
         if os.path.isdir(os.path.join(lxc.basepath, entry)):
-            ret.append(entry)
+            containers.append(entry)
+
+    ret = get_container_that_are_slivers(containers)
+
     return ret
+
+
+def get_container_that_are_slivers(containers):
+
+    ret = []
+
+    for entry in containers:
+        if os.path.exists(os.path.join(lxc.imagepath, entry)):
+            ret.append(entry)
+
+    return ret
+
 
 def byte2MiByte(val):
     return val/1024/1024
