@@ -5,6 +5,8 @@ from client.nodeinfo.sliverinfo.lxc.cgroup import cgroup
 from client.nodeinfo.sliverinfo import lxc
 import sys
 from client.nodeinfo.sysinfo.common import usage_percent
+from __future__ import division
+
 
 interval =1
 
