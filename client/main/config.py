@@ -45,13 +45,6 @@ def current_server_timestamp():
 def update_current_seq_number():
     global CURRENT_SEQ_NUMBER
     CURRENT_SEQ_NUMBER += 1
-    s = shelve.open('log_shelf.db', writeback = True)
-    try:
-        print("writing to file" + str(CURRENT_SEQ_NUMBER))
-        s['current_seq_number']= CURRENT_SEQ_NUMBER
-    finally:
-        s.close()
-
 
 def get_current_seq_number():
     global CURRENT_SEQ_NUMBER

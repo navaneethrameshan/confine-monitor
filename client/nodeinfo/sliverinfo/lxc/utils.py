@@ -1,11 +1,10 @@
-
+from __future__ import division
 import os
 import time
 from client.nodeinfo.sliverinfo.lxc.cgroup import cgroup
 from client.nodeinfo.sliverinfo import lxc
 import sys
 from client.nodeinfo.sysinfo.common import usage_percent
-from __future__ import division
 
 
 interval =1
@@ -84,7 +83,7 @@ def container_cpu_usage(name):
     time.sleep(interval)
     current_cpu_usage = inst.getValue("cpuacct.usage")
     diff_cpu_usage = int(current_cpu_usage) - int(previous_cpu_usage)
-    cpu_usage = float(diff_cpu_usage/(interval*1000000000))
+    cpu_usage = float(diff_cpu_usage/(interval*1000000000))*100
     return {'cpu':{'cpu_usage': cpu_usage}}
 
 
