@@ -3,7 +3,7 @@ from client.nodeinfo.sliverinfo import sliverinfo
 from client.nodeinfo.sysinfo import nodeinfo
 from filelock import FileLock
 import config
-import string
+import time
 import shelve
 
 
@@ -31,7 +31,14 @@ def monitorStore():
 
         print("writing to file" + str(system_info))
         s[str(config.get_current_seq_number())]= system_info
-    finally:
-        s.close()
 
+    finally:
+        while(1):
+            try:
+                s.close()
+                break
+            except OSError:
+                print("Exception caught while closing file!! OS Error: file not found. Trying again in 1 second")
+                time.sleep(1)
+                continue
 
