@@ -66,12 +66,6 @@ def container_mem_usage(name):
     total_percent_used = usage_percent(total_used, total, _round=1)
 
 
-
-    #print "         %12s	%12s	%12s	%12s" % ("total","used","free", "percent used")
-    #print "Mem  :	%12i	%12i	%12i	%12i" % (byte2MiByte(memlimit),byte2MiByte(memused),byte2MiByte(memlimit-memused), memused/float(memlimit)*100)
-    #print "Swap :	%12i	%12i	%12i	%12i" % (byte2MiByte(memswlimit-memlimit),byte2MiByte(memswused-memused),byte2MiByte(memswlimit-memlimit-(memswused-memused)), (memswused-memused)/float(memswlimit-memlimit)*100)
-    #print "Total:	%12i	%12i	%12i	%12i" % (byte2MiByte(memswlimit),byte2MiByte(memswused),byte2MiByte(memswlimit-memswused), memswused/float(memswlimit)*100)
-
     return {'memory':{'mem_total': mem_total, 'mem_used': mem_used, 'mem_free': mem_free, 'mem_percent_used': mem_percent_used,
                       'swap_total':swap_total, 'swap_used': swap_used, 'swap_free': swap_free, 'swap_percent_used': swap_percent_used,
                       'total': total, 'total_used': total_used, 'total_free': total_free, 'total_percent_used': total_percent_used}}

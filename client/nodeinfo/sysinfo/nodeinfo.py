@@ -46,7 +46,7 @@ def get_load_avg(vars ={}, log = sys.stderr):
             return
 
     tasks = string.split(loadavg_list[3], "/")
-    load_avg = {'load_avg_1min': loadavg_list[0],'load_avg_5min': loadavg_list[1], 'load_avg_15min': loadavg_list[2], 'Tasks scheduled to Run': tasks[0], 'Total number of tasks':tasks[1]}
+    load_avg = {'load_avg_1min': float(loadavg_list[0]),'load_avg_5min': float(loadavg_list[1]), 'load_avg_15min': float(loadavg_list[2]), 'Tasks scheduled to Run': int(tasks[0]), 'Total number of tasks':int(tasks[1])}
     loadavg_file.close()
     return load_avg
 
