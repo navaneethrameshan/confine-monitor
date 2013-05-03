@@ -6,7 +6,7 @@ TIMEPERIOD = 5
 RECEIVEDTIMESTAMP=[]
 TIMEMAP_SERVER_CLIENT = {}
 CURRENT_SEQ_NUMBER =0
-LAST_SEEN_SEQ_NUMBER = 0 # useful when we want to delete seen information in the logs
+LAST_SEEN_SEQ_NUMBER = 0
 
 def get_last_timestamp():
     return RECEIVEDTIMESTAMP[-1]
@@ -51,7 +51,9 @@ def get_current_seq_number():
     return CURRENT_SEQ_NUMBER
 
 def update_last_seen_seq_number(seqnumber):
+    global LAST_SEEN_SEQ_NUMBER
     LAST_SEEN_SEQ_NUMBER = seqnumber
 
 def get_last_seen_seq_number():
+    global LAST_SEEN_SEQ_NUMBER
     return LAST_SEEN_SEQ_NUMBER
