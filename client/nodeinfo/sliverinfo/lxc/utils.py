@@ -5,7 +5,9 @@ from client.nodeinfo.sliverinfo.lxc.cgroup import cgroup
 from client.nodeinfo.sliverinfo import lxc
 import sys
 from client.nodeinfo.sysinfo.common import usage_percent
-
+import urllib2
+import json
+import common
 
 interval =1
 
@@ -93,7 +95,36 @@ def get_name(container):
                 info = line.split('=')
                 sliver_name = info[-1]
                 sliver_name = sliver_name.strip()
-                (slice_name,node_name) = info[-1].split('_')
+                (slice_name,node_name) = sliver_name.split('_')
 
 
     return {'sliver_name': sliver_name, 'slice_name': slice_name}
+
+
+def get_sliver_info_from_API():
+
+        sliver_info = []
+        request = urllib2.Request('http://127.0.0.1/confine/api/node/')
+        response= None
+        try:
+            response = urllib2.urlopen(request)
+        except:
+            response = None
+
+
+        if(response is None):
+            return None
+
+        page = json.loads(response.read())
+
+        for sliver in page['slivers']:
+            try:
+                response = urllib2.urlopen(urllib2.Request(sliver['uri']))
+            except:
+                response = None
+            sliver_info.append(common.parse_api_sliver(json.loads(response.read())))
+
+        #print sliver_info
+        return sliver_info
+
+
