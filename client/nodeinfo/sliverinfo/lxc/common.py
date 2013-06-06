@@ -15,6 +15,7 @@ def parse_api_sliver(json):
     management_ip = None
     for interface in json['interfaces']:
         if interface['type'] == 'management':
-            management_ip = interface['ipv6_addr']
+            if interface.has_key('ipv6_addr'):
+                management_ip = interface['ipv6_addr']
 
     return nt_sliver_info(container, sliceid,sliverid,state,management_ip)

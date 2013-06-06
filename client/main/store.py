@@ -20,7 +20,7 @@ def monitorStore():
     system_info ['monitored_timestamp'] = config.get_current_system_timestamp()
 
     # Attach sliver info to system info
-    system_info.update(sliverinfo.collectAllData())
+    system_info.update(sliverinfo.collectAllDataAPI())
 
     s = shelve.open('log_shelf.db', writeback = True)
 
