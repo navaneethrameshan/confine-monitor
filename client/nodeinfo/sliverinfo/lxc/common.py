@@ -4,10 +4,11 @@ nt_sliver_info = namedtuple('sliver', 'container sliceid sliverid state manageme
 
 def parse_api_sliver(json):
     temp_container = json['nr']
-    if temp_container<10:
+
+    if temp_container:
         container = str(temp_container).zfill(2)
     else:
-        container = str(temp_container)
+        container = None
 
     sliceid = str.split(str(json['slice']['uri']) , '/')[-1]
     sliverid = str.split(str(json['uri']) , '/')[-1]

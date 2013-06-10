@@ -37,10 +37,12 @@ def collectAllData():
 def collectDataAPI(container, slice_name, sliver_name, state, management_ip):
     container_info = {}
     all_info = {}
+    print container
+    if container is not None:
+        container_info['container'] = container
+        container_info.update(utils.container_mem_usage(container))
+        container_info.update(utils.container_cpu_usage(container))
 
-    container_info['container'] = container
-    container_info.update(utils.container_mem_usage(container))
-    container_info.update(utils.container_cpu_usage(container))
     container_info.update({'sliver_name': sliver_name, 'slice_name': slice_name, 'state': state, 'management_ip': management_ip})
 
     all_info[container] = container_info
