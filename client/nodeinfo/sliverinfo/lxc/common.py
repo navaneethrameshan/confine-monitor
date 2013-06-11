@@ -8,12 +8,12 @@ def parse_api_sliver(json):
     if temp_container:
         container = str(temp_container).zfill(2)
     else:
-        container = None
+        container = "None"
 
     sliceid = str.split(str(json['slice']['uri']) , '/')[-1]
     sliverid = str.split(str(json['uri']) , '/')[-1]
     state = json['state']
-    management_ip = None
+    management_ip = "None"
     for interface in json['interfaces']:
         if interface['type'] == 'management':
             if interface.has_key('ipv6_addr'):

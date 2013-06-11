@@ -38,7 +38,7 @@ def collectDataAPI(container, slice_name, sliver_name, state, management_ip):
     container_info = {}
     all_info = {}
     print container
-    if container is not None:
+    if container != 'None':
         container_info['container'] = container
         container_info.update(utils.container_mem_usage(container))
         container_info.update(utils.container_cpu_usage(container))
