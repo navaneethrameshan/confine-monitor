@@ -38,7 +38,7 @@ def collectDataAPI(container, slice_name, sliver_name, state, management_ip):
     container_info = {}
     all_info = {}
     print container
-    if container != 'None':
+    if container != 'None' and state == 'started':
         container_info['container'] = container
         container_info.update(utils.container_mem_usage(container))
         container_info.update(utils.container_cpu_usage(container))
@@ -57,10 +57,11 @@ def collectAllDataAPI():
     sliver_list = utils.get_sliver_info_from_API()
 
     print 'Monitoring all started containers: '
-    for sliver in sliver_list:
-            container_info.update(collectDataAPI(sliver.container, sliver.sliceid, sliver.sliverid,sliver.state, sliver.management_ip))
+    if sliver_list:
+        for sliver in sliver_list:
+               container_info.update(collectDataAPI(sliver.container, sliver.sliceid, sliver.sliverid,sliver.state, sliver.management_ip))
 
-    all_info['slivers'] = container_info
+        all_info['slivers'] = container_info
 
     print all_info.items()
     return all_info

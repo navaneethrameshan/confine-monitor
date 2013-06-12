@@ -114,8 +114,9 @@ def get_sliver_info_from_API():
 
         if(response is None):
             return None
-
-        page = json.loads(response.read())
+        
+        print "Response: "+ str(response)
+	page = json.loads(response.read())
 
         for sliver in page['slivers']:
             try:
