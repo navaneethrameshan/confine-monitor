@@ -23,8 +23,13 @@ def disk_partitions():
             first_line = False
             continue
         else:
-            device, blocks, used, available, use_percent, mountpoint=values.split()
-            ntuple = nt_diskpartitions(device, blocks, used, available, use_percent, mountpoint)
+        ## If statement added to circumvent problems in certain confine nodes with df. Output of df:
+            # confine-sliver-000000000068
+            #                           202770     10267    182263   5% /lxc/images/01/rootfs,
+            # since blocks (202770) is printed after '/n' and not after a tab, we skip those entries for now.
+            if len(values.split())== 6:
+                device, blocks, used, available, use_percent, mountpoint=values.split()
+                ntuple = nt_diskpartitions(device, blocks, used, available, use_percent, mountpoint)
 
         ret_list.append(ntuple)
 
