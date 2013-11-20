@@ -20,7 +20,6 @@ def get_all_info_since(seqnumber):
     file_current_sequence_number = open(config.PATH+'/current_sequence', 'r')
 
     for seq in xrange(last_seen_seq+1, int(file_current_sequence_number.read()) +1):
-        print seq
         temp_file = open (config.PATH + '/'+str(seq), 'r')
         value = ast.literal_eval(temp_file.read())
         # Do not persist current_timestamp and relative_timestamp. They are calculated every time a request is received in order to account for newer calculations in case of network partitions.
