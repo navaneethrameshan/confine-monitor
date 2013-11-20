@@ -116,14 +116,16 @@ def get_sliver_info_from_API():
             return None
         
         print "Response: "+ str(response)
-	page = json.loads(response.read())
+        page = json.loads(response.read())
 
         for sliver in page['slivers']:
             try:
                 response = urllib2.urlopen(urllib2.Request(sliver['uri']))
             except:
                 response = None
-            sliver_info.append(common.parse_api_sliver(json.loads(response.read())))
+
+            if response:
+                sliver_info.append(common.parse_api_sliver(json.loads(response.read())))
 
         #print sliver_info
         return sliver_info

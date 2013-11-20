@@ -66,5 +66,5 @@ def collectAllDataAPI():
     print all_info.items()
     return all_info
 
-collectAllDataAPI()
+#collectAllDataAPI()
 

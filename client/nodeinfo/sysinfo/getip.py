@@ -10,5 +10,5 @@ def get_ip6 (interface):
     output = p4.stdout.read()
     return output.strip()
 
-value = get_ip6('confine')
-print value
+#value = get_ip6('confine')
+#print value

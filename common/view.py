@@ -1,6 +1,6 @@
 from bottle import route, run, template
 import json, string
-from client.main import config, log
+from client.main import config, logfile
 
 
 @route('/')
@@ -13,7 +13,7 @@ def getallinfo(seqnumber=0):
 
     json_value = {}
 
-    json_value = json.dumps(log.get_all_info_since(seqnumber), sort_keys=True, indent=4, separators=(',', ': '))
+    json_value = json.dumps(logfile.get_all_info_since(seqnumber), sort_keys=True, indent=4, separators=(',', ': '))
 
 
     if json_value:

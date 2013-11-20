@@ -1,5 +1,5 @@
-import shelve
 
+import os
 import time
 
 TIMEPERIOD = 60
@@ -7,6 +7,7 @@ RECEIVEDTIMESTAMP=[]
 TIMEMAP_SERVER_CLIENT = {}
 CURRENT_SEQ_NUMBER =0
 LAST_SEEN_SEQ_NUMBER = 0
+PATH = os.path.join(os.path.dirname(__file__), '../../Logs')
 
 def get_last_timestamp():
     return RECEIVEDTIMESTAMP[-1]
