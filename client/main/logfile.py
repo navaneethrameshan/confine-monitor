@@ -20,13 +20,16 @@ def get_all_info_since(seqnumber):
     file_current_sequence_number = open(config.PATH+'/current_sequence', 'r')
 
     for seq in xrange(last_seen_seq+1, int(file_current_sequence_number.read()) +1):
-        temp_file = open (config.PATH + '/'+str(seq), 'r')
-        value = ast.literal_eval(temp_file.read())
-        # Do not persist current_timestamp and relative_timestamp. They are calculated every time a request is received in order to account for newer calculations in case of network partitions.
-        value['relative_timestamp'] = config.get_current_system_timestamp()-value['monitored_timestamp']
-        system_info[str(seq)] = value
-        temp_file.close()
-
+        path = config.PATH + '/'+str(seq)
+        if os.path.exists(path):
+            temp_file = open (config.PATH + '/'+str(seq), 'r')
+            value = ast.literal_eval(temp_file.read())
+            # Do not persist current_timestamp and relative_timestamp. They are calculated every time a request is received in order to account for newer calculations in case of network partitions.
+            value['relative_timestamp'] = config.get_current_system_timestamp()-value['monitored_timestamp']
+            system_info[str(seq)] = value
+            temp_file.close()
+        else:
+            print "[ERROR]: A file with sequence number not seen has been deleted:: ", seq
     file_current_sequence_number.close()
     write_last_seen_sequence_number(last_seen_seq)
 
