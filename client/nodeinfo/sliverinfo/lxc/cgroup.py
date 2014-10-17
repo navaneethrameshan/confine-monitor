@@ -14,12 +14,16 @@ class cgroup:
 	def __init__(self, name,basepath="/cgroup/lxc"):
 		self.cgroup=basepath+'/'+name
 		if not os.path.isdir(self.cgroup):
-			raise CGroupNotFound
+			self.cgroup=None
+		#raise CGroupNotFound
 
 
 	def getValue(self,name):
 		try:
-			return open(self.cgroup+'/'+name).read().rstrip('\n')
+			if self.cgroup is None:
+				return None
+			else:
+				return open(self.cgroup+'/'+name).read().rstrip('\n')
 		except:
 			raise CGroupNoSuchValue
-			
+
