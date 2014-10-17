@@ -120,8 +120,11 @@ def get_sliver_info_from_API():
 		if(response is None):
 			return None
 
-		print "Response: "+ str(response)
-		page = json.loads(response.read())
+		print "Response: "+ str(response.read())
+		#ignore UTF8 invalid characters
+		value = unicode(response.read(), errors='ignore')
+
+		page = json.loads(value)
 
 		for sliver in page['slivers']:
 			try:
@@ -130,7 +133,9 @@ def get_sliver_info_from_API():
 				response = None
 
 			if response:
-				sliver_info.append(common.parse_api_sliver(json.loads(response.read())))
+				#ignore UTF8 invalid characters
+				value = unicode(response.read(), errors='ignore')
+				sliver_info.append(common.parse_api_sliver(json.loads(value)))
 
 		#print sliver_info
 		return sliver_info
