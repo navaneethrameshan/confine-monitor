@@ -72,10 +72,13 @@ def network_all():
     network= {}
 
     for name in nic_names:
-        stats_before = pnic_before[name]
-        stats_after = pnic_after[name]
+		try:
+			stats_before = pnic_before[name]
+			stats_after = pnic_after[name]
+		except:
+			continue
 
-        network[name] = {'bytes_sent': stats_after.bytes_sent,
+		network[name] = {'bytes_sent': stats_after.bytes_sent,
                          'bytes_recv': stats_after.bytes_recv,
                          'bytes_sent_last_sec':stats_after.bytes_sent - stats_before.bytes_sent ,
                          'bytes_recv_last_sec': stats_after.bytes_recv - stats_before.bytes_recv  }
