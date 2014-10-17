@@ -46,10 +46,10 @@ def collectDataAPI(container, slice_name, sliver_name, state, management_ip):
 
 	container_info.update({'sliver_name': sliver_name, 'slice_name': slice_name, 'state': state, 'management_ip': management_ip})
 
-	if container:
+	if container!= 'None':
 		all_info[container] = container_info
 	#    print all_info.items()
-	
+
 	return all_info
 
 def collectAllDataAPI():
