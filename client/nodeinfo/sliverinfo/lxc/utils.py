@@ -122,7 +122,7 @@ def get_sliver_info_from_API():
 
 		print "Response: "+ str(response.read())
 		#ignore UTF8 invalid characters
-		value = unicode(response.read(), errors='ignore')
+		value = unicode(str(response.read()), errors='ignore')
 
 		page = json.loads(value)
 
@@ -134,7 +134,7 @@ def get_sliver_info_from_API():
 
 			if response:
 				#ignore UTF8 invalid characters
-				value = unicode(response.read(), errors='ignore')
+				value = unicode(str(response.read()), errors='ignore')
 				sliver_info.append(common.parse_api_sliver(json.loads(value)))
 
 		#print sliver_info
