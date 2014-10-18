@@ -4,26 +4,26 @@
 import os
 
 class CGroupNotFound(Exception):
-	pass
+    pass
 
 class CGroupNoSuchValue(Exception):
-	pass
+    pass
 
 class cgroup:
-	"""Get Cgroups"""
-	def __init__(self, name,basepath="/cgroup/lxc"):
-		self.cgroup=basepath+'/'+name
-		if not os.path.isdir(self.cgroup):
-			self.cgroup=None
-		#raise CGroupNotFound
+    """Get Cgroups"""
+    def __init__(self, name,basepath="/cgroup/lxc"):
+        self.cgroup=basepath+'/'+name
+        if not os.path.isdir(self.cgroup):
+            self.cgroup=None
+        #raise CGroupNotFound
 
 
-	def getValue(self,name):
-		try:
-			if self.cgroup is None:
-				return None
-			else:
-				return open(self.cgroup+'/'+name).read().rstrip('\n')
-		except:
-			raise CGroupNoSuchValue
+    def getValue(self,name):
+        try:
+            if self.cgroup is None:
+                return None
+            else:
+                return open(self.cgroup+'/'+name).read().rstrip('\n')
+        except:
+            raise CGroupNoSuchValue
 
