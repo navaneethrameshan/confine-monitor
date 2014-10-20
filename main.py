@@ -2,6 +2,7 @@ from client.main import main
 import os
 import shutil
 import argparse
+from client.nodeinfo.sliverinfo import sliverinfo
 
 list_delete= ['log_shelf.db.dat', 'log_shelf.db.dir', 'log_shelf.db.bak', 'log_shelf.db', 'last_seen.db', 'last_seen.db.dat', 'last_seen.db.dir', 'last_seen.db.bak', 'Logs']
 
