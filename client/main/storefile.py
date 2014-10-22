@@ -22,7 +22,9 @@ def monitorStore():
     system_info ['monitored_timestamp'] = config.get_current_system_timestamp()
 
     # Attach node api info to system info
-    system_info.update(getapi.get_nodeinfo_from_API())
+    rd_tags = getapi.get_nodeinfo_from_API()
+    if rd_tags is not None:
+        system_info.update(rd_tags)
 
     # Attach sliver info to system info
     system_info.update(sliverinfo.collectAllDataAPI())
