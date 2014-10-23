@@ -4,7 +4,7 @@ import json
 def get_nodeinfo_from_API():
 
 	api_info={}
-	request = urllib2.Request('http://[fdf5:5351:1dfd:b0::2]/confine/api/node/')
+	request = urllib2.Request('http://127.0.0.1/confine/api/node/')
 	response= None
 	try:
 		response = urllib2.urlopen(request)
