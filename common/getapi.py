@@ -14,8 +14,11 @@ def get_nodeinfo_from_API():
 	if(response is None):
 		return None
 
-	value = unicode(str(response.read()), errors='ignore')
-	page = json.loads(value)
+	value = response.read()
+	try:
+	    page = json.loads(value)
+	except:
+	    return {}	
 	api_info["name"] = page['name']
 	api_info["curent_state"] = page['set_state']
 	api_info["Errors"] = page["errors"]
